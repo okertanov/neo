@@ -278,6 +278,7 @@ namespace Neo.VM
         /// Converts the <see cref="StackItem"/> to a JSON object.
         /// </summary>
         /// <param name="item">The <see cref="StackItem"/> to convert.</param>
+        /// <param name="maxSize">The maximum size in bytes of the result.</param>
         /// <returns>The <see cref="StackItem"/> represented by a JSON object.</returns>
         public static JObject ToJson(this StackItem item, int maxSize = int.MaxValue)
         {
