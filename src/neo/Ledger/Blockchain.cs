@@ -400,7 +400,7 @@ namespace Neo.Ledger
                     engine.LoadScript(onPersistScript);
                     if (engine.Execute() != VMState.HALT) {
                         Exception exception = engine.FaultException;
-                        while (exception?.InnerException != null) exception = exception.InnerException;
+                        // while (exception?.InnerException != null) exception = exception.InnerException;
                         throw exception ?? new InvalidOperationException();
                     }
                     ApplicationExecuted application_executed = new(engine);
