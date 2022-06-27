@@ -401,7 +401,7 @@ namespace Neo.Ledger
                     if (engine.Execute() != VMState.HALT) {
                         Exception exception = engine.FaultException;
                         // while (exception?.InnerException != null) exception = exception.InnerException;
-                        throw exception ?? new InvalidOperationException();
+                        // throw exception ?? new InvalidOperationException();
                     }
                     ApplicationExecuted application_executed = new(engine);
                     Context.System.EventStream.Publish(application_executed);
